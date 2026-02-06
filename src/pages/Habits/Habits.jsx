@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import './habits.scss';
 // import { AuthContext } from '../../context/AuthContext';
 import api from '../../api/axios';
@@ -17,11 +17,7 @@ const Habits = () => {
 	const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 	const daysInMonth = new Date(2026, selectedMonth + 1, 0).getDate();
 
-	useEffect(() => {
-	fetchHabits();
-	},[selectedMonth]);
-
-  const fetchHabits = async () => {
+const fetchHabits = useCallback(async () => {
     try{
 api
 			.get(`/habits/2026-${String(selectedMonth + 1).padStart(2, '0')}`)
@@ -39,7 +35,11 @@ api
     catch(err){
       console.log('err')
     }
-  }
+  },[selectedMonth])
+
+  	useEffect(() => {
+	fetchHabits();
+	},[fetchHabits]);
 
 	const toggleHabit = async (habitId, day) => {
 		const key = `${selectedMonth}-${habitId}-${day}`;

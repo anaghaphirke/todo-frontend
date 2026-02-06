@@ -19,7 +19,7 @@ const Moods = () => {
 		};
 
 		fetchMoods();
-	}, []);
+	}, [userID]);
 
 	const data = moodEntries.map((entry) => ({
 		date: formatDate(entry.date), // dd-mm-yyyy
