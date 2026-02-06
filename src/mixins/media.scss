@@ -1,0 +1,31 @@
+// returns pre-defined breakpoint from map, or else custom value passed in
+@function breakpoints() {
+  @return (
+    sm: 480px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1440px
+  );
+}
+
+@function breakpoint($breakpoint) {
+  @if (map-has-key(breakpoints(), $breakpoint)) {
+    @return map-get(breakpoints(), $breakpoint);
+  } @else {
+    @return $breakpoint;
+  }
+}
+
+@mixin mq($breakpoint, $respond: 'min-width') {
+  $bp: breakpoint($breakpoint);
+
+  @if map-has-key(breakpoints(), $breakpoint) {
+    @if $respond == 'max-width' {
+      $bp: $bp - 1px;
+    }
+  }
+
+  @media (#{$respond}: $bp) {
+    @content;
+  }
+}

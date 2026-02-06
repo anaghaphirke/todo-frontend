@@ -1,0 +1,8 @@
+@import '../../mixins/media.scss';
+
+.journal-page {
+	@include mq('md') {
+		display: flex;
+		flex-direction: row;
+	}
+}

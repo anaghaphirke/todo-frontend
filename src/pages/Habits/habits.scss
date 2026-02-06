@@ -1,0 +1,137 @@
+@import '../../mixins/media.scss';
+
+.habits {
+  &-page {
+    width: auto;
+    margin: 20px;
+
+    @include mq('md') {
+      width: 100%;
+    }
+  }
+
+  &__container {
+    margin: 10px;
+    padding: 25px;
+    background: #fdf7ff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(180, 130, 255, 0.15);
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #b780ff;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  &__select {
+    padding: 12px 14px;
+    border: 2px solid #e8d8ff;
+    border-radius: 12px;
+    background: #fff;
+    font-size: 15px;
+    color: #7a5fb3;
+    outline: none;
+    cursor: pointer;
+
+    &:focus {
+      border-color: #c8a2ff;
+      box-shadow: 0 0 6px rgba(170, 120, 255, 0.3);
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: auto;
+
+    @include mq('md') {
+      min-width: 900px;
+    }
+
+    th,
+    td {
+      border: 2px solid #e8d8ff;
+      text-align: center;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    th {
+      background: #f6efff;
+      color: #a078ff;
+      font-weight: 500;
+      padding: 8px;
+    }
+  }
+
+  &__name {
+    text-align: left;
+    padding: 12px;
+    font-weight: 500;
+    color: #7a5fb3;
+    background: #fff;
+    position: sticky;
+    left: 0;
+    z-index: 2;
+
+    span {
+      margin-right: 6px;
+    }
+  }
+
+  &__cell {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+
+    &:hover {
+      background: #f6efff;
+    }
+
+    &.done {
+      background: linear-gradient(135deg, #ffbde6, #c7a2ff);
+      color: white;
+      font-weight: 600;
+    }
+  }
+
+  &__tbody {
+    &--mobile {
+      display: block;
+
+      @include mq('md') {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include mq('md') {
+        display: block;
+      }
+    }
+  }
+
+  &__add-btn{
+        padding: 11px;
+    background: linear-gradient(135deg, #685d64, #7e35ed);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+}

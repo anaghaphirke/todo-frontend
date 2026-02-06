@@ -1,0 +1,66 @@
+@import '../../mixins/media.scss';
+
+.journal-header {
+	background-color: #655078;
+	color: #e5d2eb;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
+	position: relative;
+	z-index: 1;
+	top: 0px;
+
+  &__wrapper{
+display: flex;
+flex-direction: row;
+  }
+
+	&__user {
+		display: flex;
+		flex-direction: column;
+		margin-left: 20px;
+		margin-left: 15px;
+		align-items: flex-start;
+		margin-right: 20px;
+		gap: 10px;
+		padding-bottom: 20px;
+    flex: 1;
+
+		@include mq('md') {
+			flex-direction: row;
+			gap: 30px;
+			align-items: center;
+      padding-top: 20px;
+		}
+	}
+
+	&__title {
+		margin: 0;
+		font-weight: 700;
+
+		@include mq('md') {
+			flex: auto;
+			font-size: 26px; 
+  font-weight: 600;
+  color: #e5d2eb; 
+  margin: 0;
+		}
+	}
+
+	&__info {
+		margin: 0;
+		font-weight: 600;
+
+		@include mq('md') {
+			font-size: 26px; 
+  font-weight: 600;
+		}
+	}
+
+  &__btn{
+    display: block;
+    margin: 20px;
+
+    @include mq('md'){
+      display: none;
+    }
+  }
+}

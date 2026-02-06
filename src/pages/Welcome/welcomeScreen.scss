@@ -1,0 +1,26 @@
+@import '../../mixins/media.scss';
+
+#login{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+  .journal-container {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .register-btn{
+    padding: 14px;
+	background: linear-gradient(135deg, #ff6fc8, #9858f8);
+	border: none;
+	border-radius: 14px;
+	color: white;
+	font-size: 18px;
+	cursor: pointer;
+      width: 100%;
+    margin-top: 10px;
+  }
+}

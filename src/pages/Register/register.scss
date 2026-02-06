@@ -1,0 +1,106 @@
+@import '../../mixins/media.scss';
+
+.register-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* row wrapper */
+.form-row {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	@include mq('md') {
+		flex-direction: row;
+	}
+}
+
+.form-row > .input-group {
+	flex: 1;
+}
+
+.input-label-static {
+  font-size: 14px;
+  color: #a078ff;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 2px solid #e8d8ff;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+
+  input {
+    accent-color: #c7a2ff;
+  }
+
+  &:hover {
+    border-color: #c8a2ff;
+  }
+}
+
+.register-modal {
+	width: 100%;
+	max-width: 520px;
+	padding: 0;
+	border: none;
+	border-radius: 24px;
+	background: #fdf7ff;
+	box-shadow: 0 12px 30px rgba(180, 130, 255, 0.25);
+
+	&::backdrop {
+		background: rgba(120, 80, 180, 0.35);
+		backdrop-filter: blur(0px);
+	}
+}
+
+.register-modal__content {
+	padding: 28px;
+}
+
+.register-modal__title {
+	text-align: center;
+	font-size: 26px;
+	margin-bottom: 20px;
+	color: #b780ff;
+}
+
+/* reuse journal styles */
+.register-form {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+/* optional close button */
+.modal-close {
+	position: absolute;
+	top: 14px;
+	right: 18px;
+	font-size: 22px;
+	background: none;
+	border: none;
+	color: #b19cd9;
+	cursor: pointer;
+}
+
+.api-error{
+display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 22px;}

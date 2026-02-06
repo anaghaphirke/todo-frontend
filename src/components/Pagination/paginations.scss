@@ -1,0 +1,55 @@
+@import '../../mixins/media.scss';
+
+.journal-pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin: 25px 0;
+	font-family: inherit;
+
+	@include mq('md') {
+		gap: 16px;
+	}
+}
+
+.page-btn {
+	padding: 8px 14px;
+	font-size: 14px;
+	background: #fdf7ff;
+	border: 2px solid #e8d8ff;
+	border-radius: 14px;
+	color: #a078ff;
+	text-decoration: none;
+	font-weight: 500;
+	transition: all 0.25s ease;
+	box-shadow: 0 4px 10px rgba(180, 130, 255, 0.12);
+
+	@include mq('md') {
+		font-size: 15px;
+		padding: 10px 18px;
+	}
+}
+
+.page-btn:hover {
+	background: linear-gradient(135deg, #ffbde6, #c7a2ff);
+	color: white;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 14px rgba(170, 120, 255, 0.25);
+}
+
+.page-btn:active {
+	transform: scale(0.96);
+}
+
+.page-btn.today {
+	background: #ffd8e8;
+	border-color: #ffbde6;
+	color: #a04678;
+	font-weight: 600;
+}
+
+.page-btn.today:hover {
+	background: linear-gradient(135deg, #ffd8e8, #c7a2ff);
+	color: white;
+}
